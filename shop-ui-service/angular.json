@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "shop-ui": {
+    "shop-ui-service": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/shop-ui",
+            "outputPath": "dist/shop-ui-service",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "shop-ui:build:production"
+              "buildTarget": "shop-ui-service:build:production"
             },
             "development": {
-              "buildTarget": "shop-ui:build:development"
+              "buildTarget": "shop-ui-service:build:development"
             }
           },
           "defaultConfiguration": "development"

@@ -1,0 +1,111 @@
+version: "3.8"
+
+services:
+  ui-service:
+    build:
+      context: ./shop-ui-service
+      dockerfile: Dockerfile
+    image: shop-ui-service:latest
+    container_name: shop-ui-service
+    ports:
+      - "8080:80"
+    networks:
+      - app-network
+    podman:
+      pod: pod1
+
+  product-service:
+    build:
+      context: ./product-service
+      dockerfile: Dockerfile
+    image: product-service:latest
+    container_name: product-service
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    networks:
+      - app-network
+    podman:
+      pod: pod2
+
+  order-service:
+    build:
+      context: ./order-service
+      dockerfile: Dockerfile
+    image: order-service:latest
+    container_name: order-service
+    depends_on:
+      - kafka
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8081/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    environment:
+      - KAFKA_BROKER=kafka:9092
+    networks:
+      - app-network
+    podman:
+      pod: pod2
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: productsdb
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - app-network
+    podman:
+      pod: pod3
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    networks:
+      - app-network
+    podman:
+      pod: pod4
+
+  # Pod: Kafka and Zookeeper
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    container_name: zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+    networks:
+      - app-network
+    podman:
+      pod: pod5
+
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    container_name: kafka
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+    ports:
+      - "9092:9092"
+    networks:
+      - app-network
+    podman:
+      pod: pod5
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  postgres-data:
+    # Ensure appropriate access permissions and implement a backup mechanism for critical data
