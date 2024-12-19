@@ -35,13 +35,13 @@ podman network create my_network
 start product-service container with my_network
 
 ```bash
-podman run -d -p 8081:8080 --name product-service --network my_network localhost/fss/product-service
+podman run -d -p 8081:8080 --name product-service-1 --network my_network localhost/fss/product-service
 ```
 
 start order-service container with my_network
 
 ```bash
-podman run -d -p 8082:8080 --name order-service --network my_network localhost/fss/product-service
+podman run -d -p 8082:8080 --name order-service --network my_network localhost/fss/order-service
 ```
 
 ### create a volume for postgres
