@@ -96,6 +96,12 @@ podman run -d --name product-service --pod my-pod localhost/fss/product-service
 podman run -d --name order-service --pod my-pod localhost/fss/order-service
 ```
 
+remove order-service container from my-pod
+
+```bash
+podman rm -f order-service
+```
+
 ```bash
 podman run -d --name postgres-db --pod my-pod \
     -e POSTGRES_USER=postgres \
