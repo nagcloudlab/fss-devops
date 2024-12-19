@@ -1,6 +1,18 @@
 version: "3.8"
 
 services:
+  shop-ui-service:
+    build:
+      context: ./shop-ui-service
+      dockerfile: Dockerfile
+    image: shop-ui-service:latest
+    container_name: shop-ui-service
+    ports:
+      - "8080:80"
+    networks:
+      - app-network
+    podman:
+      pod: pod1
   product-service:
     build:
       context: ./product-service
