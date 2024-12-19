@@ -29,7 +29,7 @@ RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d/
 
 # Copy the built Angular app from the build stage
-COPY --from=build-stage /app/dist/shop-ui/browser /usr/share/nginx/html
+COPY --from=build-stage /app/dist/shop-ui-service/browser /usr/share/nginx/html
 
 # Expose port 80 for serving the app
 EXPOSE 80
