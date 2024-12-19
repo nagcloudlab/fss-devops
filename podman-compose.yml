@@ -7,7 +7,5 @@ services:
       dockerfile: Dockerfile
     image: product-service:latest
     container_name: product-service
-    networks:
-      - app-network
     podman:
       pod: pod2
