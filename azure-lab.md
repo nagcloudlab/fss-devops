@@ -45,3 +45,8 @@ build image(s) using podman compose
 ```bash
 podman-compose build
 ```
+
+sudo nano /etc/containers/registries.conf
+
+[registries.search]
+registries = ['docker.io']
