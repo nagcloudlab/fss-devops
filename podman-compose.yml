@@ -22,11 +22,6 @@ services:
     depends_on:
       - postgres
       - redis
-    environment:
-      - DB_HOST=postgres
-      - DB_PORT=5432
-      - REDIS_HOST=redis
-      - REDIS_PORT=6379
     networks:
       - app-network
     podman:
@@ -39,8 +34,6 @@ services:
     container_name: order-service
     depends_on:
       - kafka
-    environment:
-      - KAFKA_BROKER=kafka:9092
     networks:
       - app-network
     podman:
