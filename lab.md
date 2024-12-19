@@ -64,6 +64,18 @@ podman run -d --name postgres-db \
 
 ```
 
+connect to postgres container
+
+```bash
+podman exec -it postgres-db psql -U postgres -d mydb
+```
+
+use mydb database
+
+```sql
+\c mydb
+```
+
 or using podman-compose
 
 ```bash
@@ -73,19 +85,19 @@ podman-compose -f podman-compose-v2.yml up -d
 ### or using podman pod
 
 ```bash
-podman pod create --name my_pod --network my_network
+podman pod create --name my-pod
 ```
 
 ```bash
-podman run -d --name product-service --pod my_pod product-service
+podman run -d --name product-service --pod my-pod localhost/fss/product-service
 ```
 
 ```bash
-podman run -d --name order-service --pod my_pod order-service
+podman run -d --name order-service --pod my-pod localhost/fss/order-service
 ```
 
 ```bash
-podman run -d --name postgres-db --pod my_pod \
+podman run -d --name postgres-db --pod my-pod \
     -e POSTGRES_USER=postgres \
     -e POSTGRES_PASSWORD=postgres \
     -e POSTGRES_DB=mydb \
