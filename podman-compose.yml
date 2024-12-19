@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  ui-service:
+  shop-ui-service:
     build:
       context: ./shop-ui-service
       dockerfile: Dockerfile
@@ -41,11 +41,6 @@ services:
     container_name: order-service
     depends_on:
       - kafka
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8081/health"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
     environment:
       - KAFKA_BROKER=kafka:9092
     networks:
