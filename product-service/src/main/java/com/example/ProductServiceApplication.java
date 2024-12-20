@@ -77,7 +77,7 @@ public class ProductServiceApplication {
 	@Bean
 	public RedisCacheManager cacheManager(RedisConnectionFactory connectionFactory) {
 		RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig()
-				.entryTtl(Duration.ofMinutes(1)) // Cache TTL of 10 minutes
+				.entryTtl(Duration.ofMinutes(1)) // Cache TTL
 				.serializeValuesWith(
 						RedisSerializationContext.SerializationPair.fromSerializer(new GenericJackson2JsonRedisSerializer())
 				);
@@ -86,6 +86,7 @@ public class ProductServiceApplication {
 				.cacheDefaults(config)
 				.build();
 	}
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProductServiceApplication.class, args);
