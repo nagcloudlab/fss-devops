@@ -44,28 +44,6 @@ class Product implements Serializable {
 interface ProductRepository extends JpaRepository<Product, Integer> {
 }
 
-@SpringBootApplication
-@EnableCaching
-@CrossOrigin(origins = "*")
-public class ProductServiceApplication {
-
-	@Bean
-	public RedisCacheManager cacheManager(RedisConnectionFactory connectionFactory) {
-		RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig()
-				.entryTtl(Duration.ofMinutes(1))
-				.serializeValuesWith(
-						RedisSerializationContext.SerializationPair.fromSerializer(new GenericJackson2JsonRedisSerializer())
-				);
-
-		return RedisCacheManager.builder(connectionFactory)
-				.cacheDefaults(config)
-				.build();
-	}
-
-	public static void main(String[] args) {
-		SpringApplication.run(ProductServiceApplication.class, args);
-	}
-}
 
 @RequiredArgsConstructor
 @CrossOrigin(origins = "*")
@@ -88,5 +66,28 @@ class ProductController {
 	@GetMapping("/products")
 	public List<Product> getProducts() {
 		return repository.findAll();
+	}
+}
+
+@SpringBootApplication
+@EnableCaching
+@CrossOrigin(origins = "*")
+public class ProductServiceApplication {
+
+	@Bean
+	public RedisCacheManager cacheManager(RedisConnectionFactory connectionFactory) {
+		RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig()
+				.entryTtl(Duration.ofMinutes(1))
+				.serializeValuesWith(
+						RedisSerializationContext.SerializationPair.fromSerializer(new GenericJackson2JsonRedisSerializer())
+				);
+
+		return RedisCacheManager.builder(connectionFactory)
+				.cacheDefaults(config)
+				.build();
+	}
+
+	public static void main(String[] args) {
+		SpringApplication.run(ProductServiceApplication.class, args);
 	}
 }
