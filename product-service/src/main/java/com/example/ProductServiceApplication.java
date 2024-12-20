@@ -44,31 +44,6 @@ class Product implements Serializable {
 interface ProductRepository extends JpaRepository<Product, Integer> {
 }
 
-@RequiredArgsConstructor
-@CrossOrigin(origins = "*")
-@RestController
-class ProductController {
-
-	private final ProductRepository repository;
-
-	@PostConstruct
-	void init(){
-		Product p1 = new Product(1, "Laptop", 100, 50000);
-		Product p2 = new Product(2, "Mobile", 200, 20000);
-		Product p3 = new Product(3, "Tablet", 300, 10000);
-		repository.save(p1);
-		repository.save(p2);
-		repository.save(p3);
-	}
-
-	@Cacheable("products")
-	@GetMapping("/products")
-	public List<Product> getProducts(){
-		return repository.findAll();
-	}
-}
-
-
 @SpringBootApplication
 @EnableCaching
 @CrossOrigin(origins = "*")
@@ -77,7 +52,7 @@ public class ProductServiceApplication {
 	@Bean
 	public RedisCacheManager cacheManager(RedisConnectionFactory connectionFactory) {
 		RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig()
-				.entryTtl(Duration.ofMinutes(1)) // Cache TTL
+				.entryTtl(Duration.ofMinutes(1))
 				.serializeValuesWith(
 						RedisSerializationContext.SerializationPair.fromSerializer(new GenericJackson2JsonRedisSerializer())
 				);
@@ -87,9 +62,31 @@ public class ProductServiceApplication {
 				.build();
 	}
 
-
 	public static void main(String[] args) {
 		SpringApplication.run(ProductServiceApplication.class, args);
 	}
+}
 
+@RequiredArgsConstructor
+@CrossOrigin(origins = "*")
+@RestController
+class ProductController {
+
+	private final ProductRepository repository;
+
+	@PostConstruct
+	void init() {
+		Product p1 = new Product(1, "Laptop", 100, 50000);
+		Product p2 = new Product(2, "Mobile", 200, 20000);
+		Product p3 = new Product(3, "Tablet", 300, 10000);
+		repository.save(p1);
+		repository.save(p2);
+		repository.save(p3);
+	}
+
+	@Cacheable(cacheNames = "products", key = "'products'")
+	@GetMapping("/products")
+	public List<Product> getProducts() {
+		return repository.findAll();
+	}
 }
