@@ -57,3 +57,4 @@ podman exec -it redis /bin/bash
 ```
 
 hello
+hi
