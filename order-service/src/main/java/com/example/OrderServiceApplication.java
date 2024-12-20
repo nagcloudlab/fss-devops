@@ -16,7 +16,7 @@ import java.util.List;
 @RestController
 class OrderController {
 
-	private KafkaTemplate<String, String> kafkaTemplate;
+	private final KafkaTemplate<String, String> kafkaTemplate;
 
 	@PostMapping("/order")
 	public String placeOrder(@RequestBody List<Integer> productIds){

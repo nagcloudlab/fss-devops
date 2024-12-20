@@ -40,13 +40,15 @@ export class AppComponent {
   }
 
   placeNewOrder(){
-    this.httpClient.post('http://98.70.125.146:8082/order', this.cart).subscribe((data: any) => {
-      this.message = data
-      setTimeout(() => {
-        this.message = '';
-      }, 5000);
-    });
-    this.cart = [];
+    if(this.cart.length !== 0) {
+      this.httpClient.post('http://98.70.125.146:8082/order', this.cart).subscribe((data: any) => {
+        this.message = data
+        setTimeout(() => {
+          this.message = '';
+        }, 5000);
+      });
+      this.cart = [];
+    }
   }
 
 }
