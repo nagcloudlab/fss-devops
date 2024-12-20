@@ -13,7 +13,6 @@ services:
       - app-network
     podman:
       pod: pod1
-
   product-service:
     build:
       context: ./product-service
@@ -29,7 +28,6 @@ services:
       - app-network
     podman:
       pod: pod2
-
   order-service:
     build:
       context: ./order-service
@@ -44,7 +42,6 @@ services:
       - app-network
     podman:
       pod: pod2
-
   postgres:
     image: postgres:latest
     container_name: postgres
@@ -58,7 +55,6 @@ services:
       - app-network
     podman:
       pod: pod3
-
   redis:
     image: redis:latest
     container_name: redis
@@ -66,7 +62,6 @@ services:
       - app-network
     podman:
       pod: pod4
-
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
     container_name: zookeeper
@@ -76,7 +71,6 @@ services:
       - app-network
     podman:
       pod: pod5
-
   kafka:
     image: confluentinc/cp-kafka:latest
     container_name: kafka
@@ -92,19 +86,6 @@ services:
       - app-network
     podman:
       pod: pod5
-
-  kafka-ui:
-    image: provectuslabs/kafka-ui:latest
-    container_name: kafka-ui
-    environment:
-      KAFKA_CLUSTERS_0_NAME: local
-      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
-    ports:
-      - "8083:8080"
-    networks:
-      - app-network
-    podman:
-      pod: kafka-ui-pod
 
 networks:
   app-network:
