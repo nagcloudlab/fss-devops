@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -51,6 +53,7 @@ class ProductController {
 		repository.save(p3);
 	}
 
+	@Cacheable("products")
 	@GetMapping("/products")
 	public List<Product> getProducts(){
 		return repository.findAll();
@@ -59,6 +62,7 @@ class ProductController {
 
 
 @SpringBootApplication
+@EnableCaching
 @CrossOrigin(origins = "*")
 public class ProductServiceApplication {
 
