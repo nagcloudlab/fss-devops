@@ -49,3 +49,9 @@ build image(s) using podman compose
 ```bash
 podman-compose build
 ```
+
+podman connect to the container e.g redis
+
+```bash
+podman exec -it redis /bin/bash
+```
