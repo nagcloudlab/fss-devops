@@ -8,9 +8,11 @@
   <div class="d-flex justify-content-between">
     <div>{{cart.length}} items in cart</div>
     <div>
-      <button (click)="placeNewOrder()" class="btn btn-dark">place order</button>
+      <button (click)="placeNewOrder()" class="btn btn-dark">place new order</button>
     </div>
   </div>
+  <hr/>
+  <div>{{message}}</div>
   <hr/>
   <div *ngFor="let p of products">
     <div class="mt-3 card" style="width: 18rem;">
