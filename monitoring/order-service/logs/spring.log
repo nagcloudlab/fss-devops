@@ -540,3 +540,5 @@ Unconditional classes:
 2024-12-21T15:22:53.804+05:30  INFO [,] 37649 --- [order-service] [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-12-21T15:22:53.804+05:30  INFO [,] 37649 --- [order-service] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2024-12-21T15:22:53.806+05:30  INFO [,] 37649 --- [order-service] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-12-21T17:02:46.556+05:30  INFO [,] 37649 --- [order-service] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-21T17:02:46.578+05:30  INFO [,] 37649 --- [order-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
