@@ -1,0 +1,215 @@
+2024-12-21T15:01:07.709+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] c.e.p.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 17.0.8 with PID 33849 (/Users/nag/week3/fss-devops/monitoring/payment-service/target/classes started by nag in /Users/nag/week3/fss-devops/monitoring/payment-service)
+2024-12-21T15:01:07.713+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] c.e.p.PaymentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-12-21T15:01:07.778+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-21T15:01:07.779+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-21T15:01:09.150+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2024-12-21T15:01:09.165+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-21T15:01:09.166+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2024-12-21T15:01:09.214+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-21T15:01:09.215+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1435 ms
+2024-12-21T15:01:09.991+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-12-21T15:01:10.001+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-12-21T15:01:10.060+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2024-12-21T15:01:10.080+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] c.e.p.PaymentServiceApplication          : Started PaymentServiceApplication in 2.968 seconds (process running for 3.512)
+2024-12-21T15:01:17.159+05:30  INFO [,] 33849 --- [payment-service] [http-nio-8082-exec-1] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-21T15:01:17.160+05:30  INFO [,] 33849 --- [payment-service] [http-nio-8082-exec-1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-21T15:01:17.164+05:30  INFO [,] 33849 --- [payment-service] [http-nio-8082-exec-1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-12-21T15:01:17.392+05:30  INFO [98256a514e70b12ae9da9a0bfaa05e7d,6285271778fcc4af] 33849 --- [payment-service] [http-nio-8082-exec-1] [98256a514e70b12ae9da9a0bfaa05e7d-6285271778fcc4af] c.e.payment_service.PaymentController    : Processing payment for order ID: 123
+2024-12-21T15:01:17.394+05:30  INFO [98256a514e70b12ae9da9a0bfaa05e7d,6285271778fcc4af] 33849 --- [payment-service] [http-nio-8082-exec-1] [98256a514e70b12ae9da9a0bfaa05e7d-6285271778fcc4af] c.e.payment_service.PaymentController    : Payment successful for order ID: 123
+2024-12-21T15:01:21.513+05:30 ERROR [,] 33849 --- [payment-service] [OkHttp http://localhost:4318/...] [                                                 ] i.o.exporter.internal.http.HttpExporter  : Failed to export spans. The request could not be executed. Full error message: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4318
+
+java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4318
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:297) ~[okhttp-4.12.0.jar:na]
+	at okhttp3.internal.connection.RealConnection.connect(RealConnection.kt:207) ~[okhttp-4.12.0.jar:na]
+	at okhttp3.internal.connection.ExchangeFinder.findConnection(ExchangeFinder.kt:226) ~[okhttp-4.12.0.jar:na]
+	at okhttp3.internal.connection.ExchangeFinder.findHealthyConnection(ExchangeFinder.kt:106) ~[okhttp-4.12.0.jar:na]
+	at okhttp3.internal.connection.ExchangeFinder.find(ExchangeFinder.kt:74) ~[okhttp-4.12.0.jar:na]
+	at okhttp3.internal.connection.RealCall.initExchange$okhttp(RealCall.kt:255) ~[okhttp-4.12.0.jar:na]
+	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.kt:32) ~[okhttp-4.12.0.jar:na]
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109) ~[okhttp-4.12.0.jar:na]
+	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.kt:95) ~[okhttp-4.12.0.jar:na]
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109) ~[okhttp-4.12.0.jar:na]
+	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.kt:83) ~[okhttp-4.12.0.jar:na]
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109) ~[okhttp-4.12.0.jar:na]
+	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.kt:76) ~[okhttp-4.12.0.jar:na]
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109) ~[okhttp-4.12.0.jar:na]
+	at io.opentelemetry.exporter.sender.okhttp.internal.RetryInterceptor.intercept(RetryInterceptor.java:91) ~[opentelemetry-exporter-sender-okhttp-1.43.0.jar:1.43.0]
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109) ~[okhttp-4.12.0.jar:na]
+	at okhttp3.internal.connection.RealCall.getResponseWithInterceptorChain$okhttp(RealCall.kt:201) ~[okhttp-4.12.0.jar:na]
+	at okhttp3.internal.connection.RealCall$AsyncCall.run(RealCall.kt:517) ~[okhttp-4.12.0.jar:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+	Suppressed: java.net.ConnectException: Failed to connect to localhost/127.0.0.1:4318
+		... 21 common frames omitted
+	Caused by: java.net.ConnectException: Connection refused
+		at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+		at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+		at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
+		at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+		at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+		at java.base/java.net.Socket.connect(Socket.java:633)
+		at okhttp3.internal.platform.Platform.connectSocket(Platform.kt:128)
+		at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:295)
+		... 20 common frames omitted
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:633) ~[na:na]
+	at okhttp3.internal.platform.Platform.connectSocket(Platform.kt:128) ~[okhttp-4.12.0.jar:na]
+	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.kt:295) ~[okhttp-4.12.0.jar:na]
+	... 20 common frames omitted
+
+2024-12-21T15:01:55.056+05:30  INFO [,] 33849 --- [payment-service] [File Watcher] [                                                 ] rtingClassPathChangeChangedEventListener : Restarting due to 4 class path changes (0 additions, 0 deletions, 4 modifications)
+2024-12-21T15:01:55.064+05:30  INFO [,] 33849 --- [payment-service] [Thread-5] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-21T15:01:55.074+05:30  INFO [,] 33849 --- [payment-service] [tomcat-shutdown] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2024-12-21T15:01:58.603+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] c.e.p.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 17.0.8 with PID 33849 (/Users/nag/week3/fss-devops/monitoring/payment-service/target/classes started by nag in /Users/nag/week3/fss-devops/monitoring/payment-service)
+2024-12-21T15:01:58.604+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] c.e.p.PaymentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-12-21T15:01:58.960+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2024-12-21T15:01:58.961+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-21T15:01:58.962+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2024-12-21T15:01:58.971+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-21T15:01:58.972+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 363 ms
+2024-12-21T15:01:59.121+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-12-21T15:01:59.125+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-12-21T15:01:59.144+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2024-12-21T15:01:59.163+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] c.e.p.PaymentServiceApplication          : Started PaymentServiceApplication in 0.602 seconds (process running for 52.596)
+2024-12-21T15:01:59.168+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-12-21T15:02:22.682+05:30  INFO [,] 33849 --- [payment-service] [File Watcher] [                                                 ] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-12-21T15:02:22.688+05:30  INFO [,] 33849 --- [payment-service] [Thread-7] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-21T15:02:22.690+05:30  INFO [,] 33849 --- [payment-service] [tomcat-shutdown] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2024-12-21T15:02:22.889+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] c.e.p.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 17.0.8 with PID 33849 (/Users/nag/week3/fss-devops/monitoring/payment-service/target/classes started by nag in /Users/nag/week3/fss-devops/monitoring/payment-service)
+2024-12-21T15:02:22.889+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] c.e.p.PaymentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-12-21T15:02:23.205+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2024-12-21T15:02:23.206+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-21T15:02:23.206+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2024-12-21T15:02:23.214+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-21T15:02:23.214+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 323 ms
+2024-12-21T15:02:23.317+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-12-21T15:02:23.320+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-12-21T15:02:23.332+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2024-12-21T15:02:23.344+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] c.e.p.PaymentServiceApplication          : Started PaymentServiceApplication in 0.496 seconds (process running for 76.778)
+2024-12-21T15:02:23.347+05:30  INFO [,] 33849 --- [payment-service] [restartedMain] [                                                 ] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-12-21T15:02:24.947+05:30  INFO [,] 33849 --- [payment-service] [SpringApplicationShutdownHook] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-21T15:02:24.950+05:30  INFO [,] 33849 --- [payment-service] [tomcat-shutdown] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2024-12-21T15:03:17.697+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] c.e.p.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 17.0.8 with PID 34351 (/Users/nag/week3/fss-devops/monitoring/payment-service/target/classes started by nag in /Users/nag/week3/fss-devops/monitoring/payment-service)
+2024-12-21T15:03:17.711+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] c.e.p.PaymentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-12-21T15:03:17.773+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-21T15:03:17.774+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-21T15:03:19.198+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2024-12-21T15:03:19.212+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-21T15:03:19.213+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2024-12-21T15:03:19.253+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-21T15:03:19.254+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1479 ms
+2024-12-21T15:03:19.914+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-12-21T15:03:19.921+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-12-21T15:03:19.985+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2024-12-21T15:03:20.008+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] c.e.p.PaymentServiceApplication          : Started PaymentServiceApplication in 2.905 seconds (process running for 3.359)
+2024-12-21T15:03:25.863+05:30  INFO [,] 34351 --- [payment-service] [http-nio-8082-exec-1] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-21T15:03:25.863+05:30  INFO [,] 34351 --- [payment-service] [http-nio-8082-exec-1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-21T15:03:25.865+05:30  INFO [,] 34351 --- [payment-service] [http-nio-8082-exec-1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-12-21T15:03:25.971+05:30  INFO [c16b24ee0923e5200497a25849a62ae0,9d9b1fd29c8c710a] 34351 --- [payment-service] [http-nio-8082-exec-1] [c16b24ee0923e5200497a25849a62ae0-9d9b1fd29c8c710a] c.e.payment_service.PaymentController    : Processing payment for order ID: 123
+2024-12-21T15:03:25.972+05:30  INFO [c16b24ee0923e5200497a25849a62ae0,9d9b1fd29c8c710a] 34351 --- [payment-service] [http-nio-8082-exec-1] [c16b24ee0923e5200497a25849a62ae0-9d9b1fd29c8c710a] c.e.payment_service.PaymentController    : Payment successful for order ID: 123
+2024-12-21T15:20:12.442+05:30  INFO [,] 34351 --- [payment-service] [File Watcher] [                                                 ] rtingClassPathChangeChangedEventListener : Restarting due to 4 class path changes (0 additions, 0 deletions, 4 modifications)
+2024-12-21T15:20:12.505+05:30  INFO [,] 34351 --- [payment-service] [Thread-5] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-21T15:20:12.577+05:30  INFO [,] 34351 --- [payment-service] [tomcat-shutdown] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2024-12-21T15:20:13.119+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] c.e.p.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 17.0.8 with PID 34351 (/Users/nag/week3/fss-devops/monitoring/payment-service/target/classes started by nag in /Users/nag/week3/fss-devops/monitoring/payment-service)
+2024-12-21T15:20:13.120+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] c.e.p.PaymentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-12-21T15:20:13.602+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2024-12-21T15:20:13.605+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-21T15:20:13.606+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2024-12-21T15:20:13.625+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-21T15:20:13.626+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 503 ms
+2024-12-21T15:20:13.891+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-12-21T15:20:13.898+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-12-21T15:20:13.929+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2024-12-21T15:20:13.953+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] c.e.p.PaymentServiceApplication          : Started PaymentServiceApplication in 0.872 seconds (process running for 1017.433)
+2024-12-21T15:20:13.960+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-12-21T15:21:20.721+05:30  INFO [,] 34351 --- [payment-service] [File Watcher] [                                                 ] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-12-21T15:21:20.738+05:30  INFO [,] 34351 --- [payment-service] [Thread-7] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-21T15:21:20.744+05:30  INFO [,] 34351 --- [payment-service] [tomcat-shutdown] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2024-12-21T15:21:20.937+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] c.e.p.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 17.0.8 with PID 34351 (/Users/nag/week3/fss-devops/monitoring/payment-service/target/classes started by nag in /Users/nag/week3/fss-devops/monitoring/payment-service)
+2024-12-21T15:21:20.938+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] c.e.p.PaymentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-12-21T15:21:21.238+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2024-12-21T15:21:21.239+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-21T15:21:21.239+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2024-12-21T15:21:21.251+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-21T15:21:21.252+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 305 ms
+2024-12-21T15:21:21.367+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-12-21T15:21:21.370+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2024-12-21T15:21:21.386+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2024-12-21T15:21:21.397+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] c.e.p.PaymentServiceApplication          : Started PaymentServiceApplication in 0.491 seconds (process running for 1084.881)
+2024-12-21T15:21:21.405+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   MetricsEndpointAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'io.micrometer.core.annotation.Timed' (OnClassCondition)
+      - @ConditionalOnAvailableEndpoint marked as exposed by a 'management.endpoints.web.exposure' property (OnAvailableEndpointCondition)
+
+   MetricsEndpointAutoConfiguration#metricsEndpoint matched:
+      - @ConditionalOnBean (types: io.micrometer.core.instrument.MeterRegistry; SearchStrategy: all) found bean 'simpleMeterRegistry'; @ConditionalOnMissingBean (types: org.springframework.boot.actuate.metrics.MetricsEndpoint; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2024-12-21T15:21:29.834+05:30  INFO [,] 34351 --- [payment-service] [File Watcher] [                                                 ] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-12-21T15:21:29.835+05:30  INFO [,] 34351 --- [payment-service] [Thread-11] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-21T15:21:29.837+05:30  INFO [,] 34351 --- [payment-service] [tomcat-shutdown] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2024-12-21T15:21:29.902+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] c.e.p.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 17.0.8 with PID 34351 (/Users/nag/week3/fss-devops/monitoring/payment-service/target/classes started by nag in /Users/nag/week3/fss-devops/monitoring/payment-service)
+2024-12-21T15:21:29.903+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] c.e.p.PaymentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-12-21T15:21:30.107+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2024-12-21T15:21:30.107+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-21T15:21:30.108+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2024-12-21T15:21:30.115+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-21T15:21:30.116+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 212 ms
+2024-12-21T15:21:30.210+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-12-21T15:21:30.212+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2024-12-21T15:21:30.222+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2024-12-21T15:21:30.233+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] c.e.p.PaymentServiceApplication          : Started PaymentServiceApplication in 0.35 seconds (process running for 1093.717)
+2024-12-21T15:21:30.234+05:30  INFO [,] 34351 --- [payment-service] [restartedMain] [                                                 ] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2024-12-21T15:21:38.909+05:30  INFO [,] 34351 --- [payment-service] [SpringApplicationShutdownHook] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2024-12-21T15:21:38.913+05:30  INFO [,] 34351 --- [payment-service] [tomcat-shutdown] [                                                 ] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2024-12-21T15:21:51.766+05:30  INFO [,] 37538 --- [payment-service] [restartedMain] [                                                 ] c.e.p.PaymentServiceApplication          : Starting PaymentServiceApplication using Java 17.0.8 with PID 37538 (/Users/nag/week3/fss-devops/monitoring/payment-service/target/classes started by nag in /Users/nag/week3/fss-devops/monitoring/payment-service)
+2024-12-21T15:21:51.772+05:30  INFO [,] 37538 --- [payment-service] [restartedMain] [                                                 ] c.e.p.PaymentServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-12-21T15:21:51.833+05:30  INFO [,] 37538 --- [payment-service] [restartedMain] [                                                 ] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-21T15:21:51.834+05:30  INFO [,] 37538 --- [payment-service] [restartedMain] [                                                 ] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-21T15:21:52.931+05:30  INFO [,] 37538 --- [payment-service] [restartedMain] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2024-12-21T15:21:52.944+05:30  INFO [,] 37538 --- [payment-service] [restartedMain] [                                                 ] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-21T15:21:52.945+05:30  INFO [,] 37538 --- [payment-service] [restartedMain] [                                                 ] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2024-12-21T15:21:52.986+05:30  INFO [,] 37538 --- [payment-service] [restartedMain] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-21T15:21:52.986+05:30  INFO [,] 37538 --- [payment-service] [restartedMain] [                                                 ] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1152 ms
+2024-12-21T15:21:53.597+05:30  INFO [,] 37538 --- [payment-service] [restartedMain] [                                                 ] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-12-21T15:21:53.604+05:30  INFO [,] 37538 --- [payment-service] [restartedMain] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2024-12-21T15:21:53.675+05:30  INFO [,] 37538 --- [payment-service] [restartedMain] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2024-12-21T15:21:53.696+05:30  INFO [,] 37538 --- [payment-service] [restartedMain] [                                                 ] c.e.p.PaymentServiceApplication          : Started PaymentServiceApplication in 2.577 seconds (process running for 3.25)
+2024-12-21T15:27:09.205+05:30  INFO [,] 37538 --- [payment-service] [http-nio-8082-exec-1] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-21T15:27:09.209+05:30  INFO [,] 37538 --- [payment-service] [http-nio-8082-exec-1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-21T15:27:09.221+05:30  INFO [,] 37538 --- [payment-service] [http-nio-8082-exec-1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms

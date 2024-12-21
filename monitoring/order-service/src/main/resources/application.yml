@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: order-service
+
+#management:
+#  tracing:
+#    enabled: true  # Enable tracing
+#    sampling:
+#      probability: 1.0  # 100% sampling
+##
+#tracing:
+#  url: http://localhost:4318/v1/traces  # Jaeger's OTLP HTTP endpoint
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, metrics, prometheus
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+
+logging:
+  pattern:
+    level: '%5p [%X{traceId:-},%X{spanId:-}]'
+  file:
+    path: ./logs/
+server:
+  port: 8081
